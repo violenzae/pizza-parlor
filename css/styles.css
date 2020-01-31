@@ -28,3 +28,7 @@ html {
   color: black;
 }
 
+#itemdesc {
+  display: none;
+}
+
