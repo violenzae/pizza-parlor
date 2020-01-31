@@ -1,3 +1,8 @@
+function Order(pizzas, breadsticks) {
+this.pizzas = [];
+this.breadsticks = breadsticks;
+}
+
 function Pizza(size, toppings) {
 this.size = size;
 this.toppings = toppings;
@@ -35,10 +40,10 @@ $(document).ready(function() {
       toppings.push(this.value);
     });
     
-    var total = newPizza.getPrice();
+    var pizzaTotal = newPizza.getPrice();
 
-    $("#total").text(total);
+    $("#total").text("$"+pizzaTotal);
 
-    console.log(total);
+    console.log(pizzaTotal);
   });
 });

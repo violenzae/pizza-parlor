@@ -1,8 +1,9 @@
 .panel {
   margin-top: auto;
   margin-left: auto;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 1);
   color: white;
+  padding: 2%;
 }
 
 #heading {
@@ -15,7 +16,7 @@
 }
 
 body {
-  background-image:url("../img/MdRQ.gif");
+  background-image:url("../img/pizzabrot.gif");
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
