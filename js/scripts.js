@@ -31,7 +31,6 @@ $(document).ready(function() {
     var toppings = []
     var newPizza = new Pizza(size, toppings);
 
-
     $("input:checkbox[name=toppings]:checked").each(function(){
       toppings.push(this.value);
     });
@@ -41,6 +40,5 @@ $(document).ready(function() {
     $("#total").text(total);
 
     console.log(total);
-
   });
 });
