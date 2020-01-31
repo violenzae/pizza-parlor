@@ -88,13 +88,19 @@ $(document).ready(function() {
 
 
     $("#itemlink").append('<p id="itemlink">'+$("#size").val()+' Pizza, '+$("input#newbreadstick").val()+' breadsticks. (Click for Details)</p><div id="itemhide">');
-    $("itemdesc").append('<p></p>')
+
+
+
+    newPizza.toppings.forEach(function(item){
+      $("#itemlink").append('<ul id="itemdesc"><li>' + item + '</li></ul>');
    
     $("#itemlink").click(function(){
-      $(this).next("#itemdesc").show();
+      $(this).children("#itemdesc").show();
 
   });
   });
 
 
   });
+
+});
