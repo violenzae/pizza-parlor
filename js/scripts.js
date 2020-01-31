@@ -4,7 +4,15 @@ this.toppings = toppings;
 }
 
 Pizza.prototype.sizePrice = function() {
-  if(this.size === "s")
+  if(this.size === "s") {
+    return 8; 
+  } else if(this.size === "m") {
+    return 10;
+  } else if(this.size === "l") {
+    return 12;
+  } else {
+    return 14;
+  }
 }
 
 $(document).ready(function() {
