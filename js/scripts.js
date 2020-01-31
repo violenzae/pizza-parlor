@@ -1,10 +1,10 @@
 var order = new Order(pizzas, breadsticks);
 var pizzas = [];
-var breadsticks = parseInt($("#breadsticks").val());
+var breadsticks = 0;
 
 function Order() {
 this.pizzas = [];
-this.breadsticks = breadsticks;
+this.breadsticks = 0;
 }
 
 function Pizza(size, toppings) {
@@ -15,6 +15,10 @@ this.toppings = toppings;
 
 Order.prototype.addPizza = function(newPizza) {
   this.pizzas.push(newPizza);
+}
+
+Order.prototype.addBreadsticks = function(newBreadstick) {
+  return this.breadsticks += newBreadstick;
 }
 
 Pizza.prototype.sizePrice = function() {
@@ -42,15 +46,16 @@ Order.prototype.pizzasTotal = function() {
 }
 
 $(document).ready(function() {
+
+
   $("form#pizzaForm").submit(function(event) {
     event.preventDefault();
     
     var size = $("#size").val();
     var toppings = [];
     var newPizza = new Pizza(size, toppings);
+    var newBreadstick = parseInt($("input#newbreadstick").val());
 
-
-    
 
     $("input:checkbox[name=toppings]:checked").each(function(){
       toppings.push(this.value);
@@ -59,6 +64,8 @@ $(document).ready(function() {
     var pizzaTotal = newPizza.getPrice();
 
     order.addPizza(newPizza);
+    order.addBreadsticks(newBreadstick);
+ 
     
 
     $("#total").text("$"+pizzaTotal);
