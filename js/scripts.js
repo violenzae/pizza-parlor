@@ -10,10 +10,16 @@ Pizza.prototype.sizePrice = function() {
     return 10;
   } else if(this.size === "l") {
     return 12;
-  } else {
+  } else if(this.size === "xl") {
     return 14;
   }
 }
+
+Pizza.prototype.toppingsPrice = function() {
+  return this.toppings.length * .75;
+}
+
+Pizza.prototype.totalPrice = function()
 
 $(document).ready(function() {
   $("form#pizzaForm").submit(function(event) {
@@ -27,6 +33,7 @@ $(document).ready(function() {
       toppings.push(this.value);
     });
     
+    newPizza.toppingsPrice +
 
     console.log(toppings)
 
