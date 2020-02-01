@@ -84,8 +84,10 @@ $(document).ready(function() {
 
     $("#total").text("$"+total);
 
-    $("#itemlink").append('<p id="itemlink">'+$("#size").val()+' Pizza, '+$("input#newbreadstick").val()+' breadsticks. (Click for Details)</p>');
-
+    $("#itemlink").append('<p>'+$("#size").val()+' Pizza, '+$("input#newbreadstick").val()+' breadsticks. (Click for Details)</p>');
+    
+    order.breadPics();
+    $("#bready").show();
 
     newPizza.toppings.forEach(function(item){
       $("#itemlink").append('<ul id="itemdesc"><li>' + item + '</li></ul>');
@@ -94,8 +96,6 @@ $(document).ready(function() {
 
   $("#itemlink").click(function(){
     $(this).children("#itemdesc").show();
-    order.breadPics();
-    $("#bready").show();
-    
+
   });
 });
