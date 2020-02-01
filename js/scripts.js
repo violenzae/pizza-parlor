@@ -36,7 +36,6 @@ Pizza.prototype.getPrice = function() {
  this.onePrice = this.sizePrice() + this.toppingsPrice();
 }
 
-
 Order.prototype.addPizza = function(newPizza) {
   this.pizzas.push(newPizza);
 }
@@ -63,8 +62,6 @@ Order.prototype.breadPics = function() {
 }
 
 $(document).ready(function() {
-
-
   $("form#pizzaForm").submit(function(event) {
     event.preventDefault();
     
@@ -81,35 +78,24 @@ $(document).ready(function() {
     
     order.addPizza(newPizza);
     order.addBreadsticks(newBreadstick);
-
     order.getAllPizzaPrice();
 
     var total = order.total();
 
     $("#total").text("$"+total);
-    
-    console.log(allPizzaPrice);
-    console.log(total);
-
-
 
     $("#itemlink").append('<p id="itemlink">'+$("#size").val()+' Pizza, '+$("input#newbreadstick").val()+' breadsticks. (Click for Details)</p>');
 
 
-
     newPizza.toppings.forEach(function(item){
       $("#itemlink").append('<ul id="itemdesc"><li>' + item + '</li></ul>');
-    
-     });
-
-   
-
-
+    });
   });
+
   $("#itemlink").click(function(){
     $(this).children("#itemdesc").show();
     order.breadPics();
     $("#bready").show();
-});
-
+    
+  });
 });
