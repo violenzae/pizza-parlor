@@ -5,10 +5,9 @@ this.breadsticks = 0;
 this.allPizzaPrice = 0;
 }
 
-function Pizza(size, toppings, onePrice) {
+function Pizza(size, toppings) {
 this.size = size;
 this.toppings = toppings;
-this.onePrice = onePrice;
 }
 
 Pizza.prototype.sizePrice = function() {
@@ -49,8 +48,6 @@ Order.prototype.total = function() {
   var allBreadPrice = this.breadsticks*3;
   return allBreadPrice + this.allPizzaPrice;
 }
-
-Order.prototype.breadPics = 
 
 $(document).ready(function() {
   var order = new Order();
